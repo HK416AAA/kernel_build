@@ -32,13 +32,9 @@ jobs:
 
       - name: Setup KernelSU
         run: |
-          echo "GKI_ROOT=/home/runner/work/kernel_build/kernel_build"
-          test -d /home/runner/work/kernel_build/kernel_build/common/drivers
-          test -d /home/runner/work/kernel_build/kernel_build/drivers
-          rm -rf KernelSU
-          rm -rf drivers/kernelsu
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
-      
+           rm -rf KernelSU
+           rm -rf drivers/kernelsu
+           curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
       
       - name: Build kernel
         run: |
