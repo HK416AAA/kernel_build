@@ -32,7 +32,9 @@ jobs:
 
       - name: Setup KernelSU
         run: |
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s ${{ env.KERNELSU_TAG }}
+          rm -rf KernelSU
+          rm -rf drivers/kernelsu
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
       
       
       - name: Build kernel
